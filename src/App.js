@@ -5,24 +5,12 @@ export default function App() {
   const[colour,setColour]= useState();
   const[state,setState]=useState(false);
 
-  function NewButton(){
-    function off(){
-      setColour();
-      setState(false);
-    }
-  return (
-    <div style={{margin:'0px 0px 0px 10px'}}>
-      <button onClick={()=>off()}>OFF</button>
-    </div>
-  );
-  }
-  console.log(colour);
-  console.log(state);
-
   useEffect(()=>{
     if(state){
       setColour('yellow');
-    } 
+    }else{
+      setColour('')
+    }
     console.log(colour);
     console.log(state);
   },[state])
@@ -30,10 +18,10 @@ export default function App() {
   return (
     <>
     <div style={{display:'flex',margin:'20px'}}>
-      <button onClick={()=>setState(true)}>ON</button>
-      {state ? <NewButton /> : null}
+      <button onClick={()=>setState(!state)}>
+      {!state ? "ON" : "OFF"}</button>
     </div>
-    <div style={{width:'40px',background:colour,margin:'20px 0px 0px 45px'}}>=^.^=</div>
+    <div style={{width:'40px',background:colour,margin:'20px'}}>=^.^=</div>
     </>
   );
 }
