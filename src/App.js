@@ -8,11 +8,7 @@ export default function App() {
     const[state,setState]=useState(newState);
 
     useEffect(()=>{
-      if(state){
-        setColour('yellow');
-      }else{
-        setColour('')
-      }
+      state? setColour('yellow') : setColour('');
       console.log(colour);
       console.log(state);
     },[state])
