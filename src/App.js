@@ -3,9 +3,9 @@ import "./style.css";
 
 export default function App() {
 
-  function useHightlight(color, estado){
-    const[colour,setColour]= useState();
-    const[state,setState]=useState(estado);
+  function useHightlight(newColor, newState){
+    const[colour,setColour]= useState(newColor);
+    const[state,setState]=useState(newState);
 
     useEffect(()=>{
       if(state){
